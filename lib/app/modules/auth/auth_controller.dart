@@ -15,7 +15,6 @@ class AuthController {
   Future<Response> register(Request request) async {
     try {
       final userRq = User.fromJson(await request.readAsString());
-      print(_userRepository.toString());
       await _userRepository.save(userRq);
 
       return Response(200, headers: {

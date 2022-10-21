@@ -3,7 +3,6 @@ import 'package:mysql1/mysql1.dart';
 
 class Database {
   Future<MySqlConnection> openConnection() async {
-    print(env['databaseHost']);
     return MySqlConnection.connect(
       ConnectionSettings(
         host: env['DATABASE_HOST'] ?? env['databaseHost'] ?? '',
